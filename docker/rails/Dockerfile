@@ -4,9 +4,9 @@ ENV LANG C.UTF-8
 RUN apt-get update -qq && apt-get install -y build-essential mysql-client nodejs
 
 RUN gem install bundler
-# for MySQL  
-# 必要なライブラリインストール  
-RUN apt-get update -qq && apt-get install -y   build-essential libpq-dev mysql-client  
+# for MySQL
+# 必要なライブラリインストール
+RUN apt-get update -qq && apt-get install -y   build-essential libpq-dev mysql-client
 
 # yarn環境の構築
 RUN apt-get install -y curl apt-transport-https wget && \
@@ -30,4 +30,3 @@ ENV APP_HOME /myapp
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 ADD . $APP_HOME
-
